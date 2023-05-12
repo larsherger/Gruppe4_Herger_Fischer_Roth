@@ -15,9 +15,21 @@
   height: 100px;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+
+
 .content {
   flex-grow: 1;
   background-color: #ffb38a;
+}
+
+
+.main-image {
+  max-width: 100%;
 }
 
 .footer {
