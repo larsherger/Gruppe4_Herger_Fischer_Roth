@@ -1,6 +1,7 @@
 /* CSS Code, der für alle Web Pages gleich ist */
 
 .webpage {
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   /* min-height: bewirkt, dass der Footer zuunterst ist. */
@@ -11,20 +12,48 @@
 }
 
 .header {
-  background-color: #ffd7b5;
-  height: 100px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.left-nav, .right-empty {
+  flex: 1;
+}
+
+nav {
+  padding-left: 10%;
 }
 
 .logo {
-  display: flex;
-  justify-content: center;
   height: 100px;
 }
 
+.nav-link {
+  font-weight: bold;
+  margin: 20px;
+  color: #000;
+  text-decoration: none;
+}
+
+.active-link {
+  text-decoration: underline;
+}
 
 .content {
   flex-grow: 1;
-  background-color: #ffb38a;
+  background-color: #fff;
+}
+
+.promotext {
+  max-width: 80%;
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.promobutton {
+  padding: 24px;
 }
 
 
