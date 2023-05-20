@@ -13,10 +13,28 @@
     <div class="header">
         <div class="left-nav">
             <nav>
-                <a class="nav-link active-link" href="">Home</a>
-                <a class="nav-link" href="">Lookbook</a>
-                <a class="nav-link" href="">Promotion</a>
+                <div id="marker"></div>
+                <a class="nav-link active-link" href="#">Home</a>
+                <a class="nav-link" href="#">Lookbook</a>
+                <a class="nav-link" href="#">Promotion</a>
             </nav>
+            <script type="text/javascript">
+                /*https://www.youtube.com/watch?v=nGdwRP9ZsA4*/
+
+                var marker = document.querySelector('#marker')
+                var item = document.querySelectorAll('nav a')
+
+                function indicator(navbarElement) {
+                    marker.style.left = navbarElement.offsetLeft + "px";
+                    marker.style.width = navbarElement.offsetWidth + "px";
+                }
+
+                item.forEach(link => {
+                    link.addEventListener('mouseover', (navbarElement) => {
+                        indicator(navbarElement.target);
+                    })
+                })
+            </script>
         </div>
         <div class="mid-logo">
             <img class="logo" src="images/logo.png" alt="">
