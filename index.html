@@ -29,12 +29,15 @@
                     marker.style.width = navbarElement.offsetWidth + "px";
                 }
 
-                const activeNavigationItem = document.getElementById("active-nav-item");
-                indicator(activeNavigationItem);
+                var activeNavigationItem = document.querySelectorAll("nav a");
+                marker.style.left = activeNavigationItem[0].offsetLeft + "px";
+                marker.style.width = activeNavigationItem[0].offsetWidth + "px";
+                console.log(activeNavigationItem)
 
                 item.forEach(link => {
                     link.addEventListener('mouseover', (navbarElement) => {
                         indicator(navbarElement.target);
+                        console.log(navbarElement.target)
                     })
                 })
             </script>
