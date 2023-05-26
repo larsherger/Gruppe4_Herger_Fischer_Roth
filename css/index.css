@@ -1,1 +1,23 @@
 /* CSS Code, den es für die Start Page braucht */
+.content {
+    flex-grow: 1;
+    background-color: #fff;
+}
+
+.promotext {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.promobutton {
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+
+.main-image {
+    max-width: 100%;
+}

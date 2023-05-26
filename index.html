@@ -14,9 +14,9 @@
         <div class="left-nav">
             <nav>
                 <div id="marker"></div>
-                <a class="nav-link active-link" href="#">Home</a>
+                <a id="active-nav-item" class="nav-link active-link" href="index.html">Home</a>
                 <a class="nav-link" href="#">Lookbook</a>
-                <a class="nav-link" href="#">Promotion</a>
+                <a class="nav-link" href="promotion.html">Promotion</a>
             </nav>
             <script type="text/javascript">
                 /*https://www.youtube.com/watch?v=nGdwRP9ZsA4*/
@@ -28,6 +28,9 @@
                     marker.style.left = navbarElement.offsetLeft + "px";
                     marker.style.width = navbarElement.offsetWidth + "px";
                 }
+
+                const activeNavigationItem = document.getElementById("active-nav-item");
+                indicator(activeNavigationItem);
 
                 item.forEach(link => {
                     link.addEventListener('mouseover', (navbarElement) => {
