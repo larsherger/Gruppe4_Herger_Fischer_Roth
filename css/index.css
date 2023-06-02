@@ -1,21 +1,31 @@
 /* CSS Code, den es für die Start Page braucht */
 .content {
     flex-grow: 1;
-    background-color: #fff;
+    background-color: #01454f;
+    color: white;
 }
 
 .promotext {
     max-width: 80%;
     margin: auto;
-    margin-top: 40px;
     text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .promobutton {
-    padding: 16px 24px;
-    font-size: 16px;
+    margin: 20px;
+    padding: 10px 48px;
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
     border-radius: 12px;
+    background-color: #DCBD11;
+    border: none;
+    color: white;
 }
+
+.promobutton:hover {}
 
 
 .main-image {

@@ -1,7 +1,11 @@
 /* CSS Code, der für alle Web Pages gleich ist */
+@font-face {
+  font-family: "Barlow";
+  src: url("/fonts/Barlow/Barlow-Light.ttf");
+}
 
 .webpage {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Barlow, sans-serif;
   display: flex;
   flex-direction: column;
   /* min-height: bewirkt, dass der Footer zuunterst ist. */
@@ -12,7 +16,7 @@
 }
 
 .header {
-  background-color: #fff;
+  background-color: #01454f;
   display: flex;
   align-items: center;
 }
@@ -30,9 +34,8 @@ nav {
 nav a {
   position: relative;
   margin: 0 20px;
-
-  font-weight: normal;
-  color: #000;
+  font-weight: bold;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -41,7 +44,7 @@ nav #marker {
   left: 0;
   height: 2px;
   width: 0;
-  background: #000;
+  background: #fff;
   bottom: -8px;
   transition: 0.5s;
   border-radius: 4px;
