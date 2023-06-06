@@ -1,1 +1,53 @@
-/* CSS Code, den es für die Start Page braucht */
+/* CSS Code, den es für die Promotion Page braucht */
+.content{
+    background-color: #e9f90bc9;
+}
+.game{
+    background-color: #3e5bb8;
+    margin: 50px 250px 100px 250px;
+    height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+#formContainer {
+  padding: 50px;
+  width: 40%;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form label {
+    display: inline-block;
+    text-align: left;  
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    display: block; 
+    width: 100%; 
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+form input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+form input[type="submit"] {
+  background-color: #0675b6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #060606;
+}
