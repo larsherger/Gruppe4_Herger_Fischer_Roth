@@ -6,8 +6,6 @@
     background-color: #3e5bb8;
     margin: 50px 250px 100px 250px;
     height: 600px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 
 }
 
@@ -15,8 +13,6 @@
   padding: 50px;
   width: 40%;
   margin: auto;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
 form label {
@@ -31,8 +27,6 @@ form input[type="email"] {
     width: 100%; 
     padding: 5px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
 }
 
 form input[type="checkbox"] {
@@ -50,4 +44,7 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
   background-color: #060606;
+}
+.hidden{
+    display: none;
 }
