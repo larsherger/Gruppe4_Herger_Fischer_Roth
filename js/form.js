@@ -19,6 +19,23 @@ submitButton.addEventListener("click", async (event) => {
 });
 
 // (3) Interaktionen Code
+
+const onChangeVornameField = () => {
+  if (vornameField.value === "") {
+    submitButton.disabled = true;
+  } else {
+    submitButton.disabled = false;
+  }
+};
+
+const onChangeNachnameField = () => {
+  if (nachnameField.value === "") {
+    submitButton.disabled = true;
+  } else {
+    submitButton.disabled = false;
+  }
+};
+
 const onChangeEmailField = () => {
   if (emailField.value === "") {
     submitButton.disabled = true;
@@ -26,6 +43,7 @@ const onChangeEmailField = () => {
     submitButton.disabled = false;
   }
 };
+
 const onClickSubmit = async () => {
   // Daten aus dem Formular für die Datenbank bereitstellen
   const data = {
