@@ -13,31 +13,25 @@
   /* padding, margin: 0: bewirkt, dass es mit 100vh zuunterist */
   padding: 0;
   margin: 0;
+  background-color: #205F69;
 }
 
-.header {
+.header-desktop {
   background-color: #01454f;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 25px 10px 10px;
 }
 
-.left-logo, .right-nav {
-  flex: 1;
-}
-
-.left-logo {
-  margin: 10px;
-}
-
-.right-nav {
-  display: flex;
-  justify-content: right;
-  margin-right: 25px;
-}
 
 nav {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+
 }
 
 nav a {
@@ -59,15 +53,92 @@ nav #marker {
   border-radius: 4px;
 }
 
+.nav-mobile-hidden {
+  background-color: #205F69;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
 .logo {
   height: 100px;
 }
 
 
-
-
-
 .footer {
   background-color: #ff9248;
   height: 50px;
+}
+
+@media only screen and (max-width: 700px) {
+  #marker {
+    display: none;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-mobile-hidden {
+    display: flex;
+    position: relative;
+    opacity: 0;
+    height: 0;
+    transition: 0.3s;
+
+  }
+
+  .nav-mobile-hidden.active {
+    top: 0;
+    transition: 0.3s;
+    opacity: 1;
+    height: auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .nav-link-mobile {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
 }

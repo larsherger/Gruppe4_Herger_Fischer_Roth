@@ -11,18 +11,24 @@
 
 <body class="webpage">
     <div class="header">
-        <div class="left-logo">
-            <img class="logo" src="images/logo.png" alt="">
-        </div>
-        <div class="mid-part">
-        </div>
-        <div class="right-nav">
+        <div class="header-desktop">
+            <img class="logo" src="images/solo-logo.svg" alt="">
             <nav>
                 <div id="marker"></div>
-                <a id="active-nav-item" class="nav-link active-link" href="index.html">Home</a>
-                <a class="nav-link" href="#">Lookbook</a>
+                <a id="active-nav-item" class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="lookbook.html">Lookbook</a>
                 <a class="nav-link" href="promotion.html">Promotion</a>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
+        </div>
+        <div class="nav-mobile-hidden">
+            <a class="nav-link-mobile" href="index.html">Home</a>
+            <a class="nav-link-mobile" href="lookbook.html">Lookbook</a>
+            <a class="nav-link-mobile" href="promotion.html">Promotion</a>
         </div>
     </div>
     <div class="content">
@@ -50,6 +56,7 @@
     </div>
     <div class="footer">footer</div>
     <script src="./js/header.js"></script>
+    <script src="./js/header-mobile.js"></script>
 </body>
 
 

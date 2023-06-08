@@ -8,46 +8,30 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/promotion.css">
     <link rel="stylesheet" href="./css/index.css">
-    
+
 </head>
 
 <body class="webpage">
     <div class="header">
-        <div class="left-nav">
+        <div class="header-desktop">
+            <img class="logo" src="images/solo-logo.svg" alt="">
             <nav>
                 <div id="marker"></div>
-                <a id="active-nav-item" class="nav-link active-link" href="index.html">Home</a>
+                <a id="active-nav-item" class="nav-link" href="index.html">Home</a>
                 <a class="nav-link" href="lookbook.html">Lookbook</a>
-                <a class="nav-link" href="#">Promotion</a>
+                <a class="nav-link" href="promotion.html">Promotion</a>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
-            <script type="text/javascript">
-                /*https://www.youtube.com/watch?v=nGdwRP9ZsA4*/
-
-                var marker = document.querySelector('#marker')
-                var item = document.querySelectorAll('nav a')
-
-                function indicator(navbarElement) {
-                    marker.style.left = navbarElement.offsetLeft + "px";
-                    marker.style.width = navbarElement.offsetWidth + "px";
-                }
-
-                var activeNavigationItem = document.querySelectorAll("nav a");
-                marker.style.left = activeNavigationItem[0].offsetLeft + "px";
-                marker.style.width = activeNavigationItem[0].offsetWidth + "px";
-                console.log(activeNavigationItem)
-
-                item.forEach(link => {
-                    link.addEventListener('mouseover', (navbarElement) => {
-                        indicator(navbarElement.target);
-                        console.log(navbarElement.target)
-                    })
-                })
-            </script>
         </div>
-        <div class="mid-logo">
-            <img class="logo" src="images/logo.png" alt="">
+        <div class="nav-mobile-hidden">
+            <a class="nav-link-mobile" href="index.html">Home</a>
+            <a class="nav-link-mobile" href="lookbook.html">Lookbook</a>
+            <a class="nav-link-mobile" href="promotion.html">Promotion</a>
         </div>
-        <div class="right-empty"></div>
     </div>
 
     <div class="content">
@@ -67,18 +51,18 @@
                 <label for="mann">Mann</label>
                 <input type="checkbox" id="frau" name="geschlecht" value="Frau">
                 <label for="frau">Frau</label> <br> <br>
-                
+
                 <label for="vorname">Vorname:</label>
                 <input type="text" id="vorname" name="vorname" required><br>
-                
+
                 <label for="nachname">Nachname:</label>
                 <input type="text" id="nachname" name="nachname" required> <br>
-                
+
                 <label for="email">E-Mail:</label>
                 <input type="email" id="email" name="email" required><br>
-                
+
                 <input type="submit" value="Absenden">
-              </form>
+            </form>
         </div>
 
         <div id="thankYouContainer" class="hidden">
@@ -87,6 +71,8 @@
 
     </div>
     <div class="footer">footer</div>
+    <script src="./js/header.js"></script>
+    <script src="./js/header-mobile.js"></script>
     <script src="./js/databaseClient.js"></script>
     <script src="./js/form.js"></script>
     <script src="./js/game.js"></script>
