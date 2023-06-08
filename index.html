@@ -11,41 +11,19 @@
 
 <body class="webpage">
     <div class="header">
-        <div class="left-nav">
+        <div class="left-logo">
+            <img class="logo" src="images/logo.png" alt="">
+        </div>
+        <div class="mid-part">
+        </div>
+        <div class="right-nav">
             <nav>
                 <div id="marker"></div>
                 <a id="active-nav-item" class="nav-link active-link" href="index.html">Home</a>
                 <a class="nav-link" href="#">Lookbook</a>
                 <a class="nav-link" href="promotion.html">Promotion</a>
             </nav>
-            <script type="text/javascript">
-                /*https://www.youtube.com/watch?v=nGdwRP9ZsA4*/
-
-                var marker = document.querySelector('#marker')
-                var item = document.querySelectorAll('nav a')
-
-                function indicator(navbarElement) {
-                    marker.style.left = navbarElement.offsetLeft + "px";
-                    marker.style.width = navbarElement.offsetWidth + "px";
-                }
-
-                var activeNavigationItem = document.querySelectorAll("nav a");
-                marker.style.left = activeNavigationItem[0].offsetLeft + "px";
-                marker.style.width = activeNavigationItem[0].offsetWidth + "px";
-                console.log(activeNavigationItem)
-
-                item.forEach(link => {
-                    link.addEventListener('mouseover', (navbarElement) => {
-                        indicator(navbarElement.target);
-                        console.log(navbarElement.target)
-                    })
-                })
-            </script>
         </div>
-        <div class="mid-logo">
-            <img class="logo" src="images/logo.png" alt="">
-        </div>
-        <div class="right-empty"></div>
     </div>
     <div class="content">
         <div>
@@ -71,6 +49,7 @@
         </div>
     </div>
     <div class="footer">footer</div>
+    <script src="./js/header.js"></script>
 </body>
 
 
