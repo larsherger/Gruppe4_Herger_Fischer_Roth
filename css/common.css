@@ -21,12 +21,21 @@
   align-items: center;
 }
 
-.left-nav, .right-empty {
+.left-logo, .right-nav {
   flex: 1;
 }
 
+.left-logo {
+  margin: 10px;
+}
+
+.right-nav {
+  display: flex;
+  justify-content: right;
+  margin-right: 25px;
+}
+
 nav {
-  padding-left: 10%;
   position: relative;
   display: flex;
 }
@@ -49,18 +58,6 @@ nav #marker {
   transition: 0.5s;
   border-radius: 4px;
 }
-
-
-
-/*.nav-link:hover {
-  border-bottom: 2px solid #000;
-  padding-bottom: 1px;
-}
-
-.active-link {
-  border-bottom: 2px solid #000;
-  padding-bottom: 1px;
-}*/
 
 .logo {
   height: 100px;
