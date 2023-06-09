@@ -14,12 +14,12 @@
 <body class="webpage">
     <div class="header">
         <div class="header-desktop">
-            <img class="logo" src="images/solo-logo.svg" alt="">
+            <a href="index.html"><img class="logo" src="images/solo-logo.svg" alt=""></a>
             <nav>
                 <div id="marker"></div>
-                <a id="active-nav-item" class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="index.html">Home</a>
                 <a class="nav-link" href="lookbook.html">Lookbook</a>
-                <a class="nav-link" href="promotion.html">Promotion</a>
+                <a id="active-nav-item" class="nav-link" href="promotion.html">Promotion</a>
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -36,9 +36,38 @@
 
     <div class="content">
 
-        <div class="game">
 
+        <div id="game-container" class="">
+
+            <div class="game-info">
+                Klicke, um zu springen.<br />
+                Weiche den Steinen aus.<br />
+                Erreiche 100 Punkte, um einen Preis zu gewinnen.
+            </div>
+
+            <div id="game">
+                <div id="game-start">
+                    <div class="startScreenText">
+                        Klicke, um das Spiel zu starten.
+                    </div>
+                </div>
+                <div id="game-background"></div>
+                <div id="game-dino"></div>
+                <div id="game-rock"></div>
+                <div id="game-score">0</div>
+            </div>
+
+            <div id="game-end" class="hidden">
+                <div id="game-winner" class="hidden">
+                    ⭐ ⭐ ⭐ Glückwunsch ⭐ ⭐ ⭐ <br />
+                    Du hast mehr als 100 Punkte erzielt.
+                    Wir benachrichtigen dich über deinen Gewinn via Email.
+                </div>
+                Das Spiel ist zu Ende.<br />
+                Klicke auf das Spiel, um erneut zu spielen.
+            </div>
         </div>
+
 
         <div id="formContainer">
             <div>
@@ -70,7 +99,33 @@
         </div>
 
     </div>
-    <div class="footer">footer</div>
+    <footer>
+        <div class="icons">
+            <a href="https://www.facebook.com"><img src="images/icons/facebook.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com"><img src="images/icons/twitter.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com"><img src="images/icons/instagram.png" alt="Instagram"></a>
+            <a href="https://github.com/larsherger/Gruppe4_Herger_Fischer_Roth"><img src="images/icons/github.png"
+                    alt="LinkedIn"></a>
+        </div>
+
+        <div class="firma">
+            <h4>Fergys Furnitures</h4>
+            <p>Simon Roth, Lars Herger, Lars Fischer</p>
+            <p>Telefon: 077 485 92 36</p>
+            <p>Email: info@fergysfurnitures.ch</p>
+        </div>
+
+        <div class="footer-nav">
+            <p><a class="footer-links" href="index.html">Home</a></p>
+            <p><a class="footer-links" href="lookbook.html">Lookbook</a></p>
+            <p><a class="footer-links" href="promotion.html">Promotion</a></p>
+        </div>
+        <div class="schlussinfo">
+            <p>Diese Website wurde im Zusammengang mit einem Schulprojekt erstellt und dient nicht als realer
+                Onlineshop.
+            </p>
+        </div>
+    </footer>
     <script src="./js/header.js"></script>
     <script src="./js/header-mobile.js"></script>
     <script src="./js/databaseClient.js"></script>
