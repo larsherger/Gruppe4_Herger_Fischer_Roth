@@ -81,10 +81,72 @@ nav #marker {
 }
 
 
-.footer {
-  background-color: #ff9248;
-  height: 50px;
+/* Footer Start */
+footer {
+  background-color: #205F69;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
+.icons,
+.firma,
+.footer-nav {
+  flex-basis: 33%;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.icons img {
+  display: inline-block;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+
+.footer-links {
+  position: relative;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-links::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+  transform: scaleX(0);
+}
+
+.footer-links:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+.schlussinfo {
+  color: #fff;
+  font-size: 12px;
+  margin: auto;
+}
+
+@media screen and (max-width: 730px) {
+  footer {
+    flex-direction: column;
+  }
+}
+
+/* Footer Ende */
 
 @media only screen and (max-width: 700px) {
   #marker {

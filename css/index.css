@@ -31,3 +31,27 @@
 .main-image {
     max-width: 100%;
 }
+
+.lookbook-link {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.preview-bilder {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.store-item {
+    flex-basis: 16%;
+}
+
+.store-item-image {
+    width: 80%;
+    height: 80%;
+    margin-bottom: -10px;
+}
