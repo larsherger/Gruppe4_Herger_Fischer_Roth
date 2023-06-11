@@ -1,13 +1,144 @@
 /* CSS Code, den es für die Promotion Page braucht */
-.content{
-    background-color: #e9f90bc9;
-}
-.game{
-    background-color: #3e5bb8;
-    margin: 50px 250px 100px 250px;
-    height: 600px;
 
+.hidden {
+  display: block;
 }
+
+.content-game {
+  min-height: 600px;
+}
+
+#game-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+#game {
+  position: relative;
+  height: 300px;
+  cursor: pointer;
+}
+
+.game-info {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#game-end {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+
+/* Elemente im Spiel */
+#game-background {
+  position: absolute;
+  width: 600px;
+  height: 300px;
+  background-image: url("../images/background.png");
+  background-size: cover;
+}
+
+.bg-animation {
+  animation: moveBg 10.33s linear infinite;
+}
+
+@keyframes moveBg {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -600px 0;
+  }
+}
+
+#game-dino {
+  height: 75px;
+  width: 75px;
+  top: 225px;
+  position: relative;
+  background-image: url("../images/dino.png");
+  background-size: cover;
+}
+
+.dino-dies {
+  background-color: red;
+}
+
+#game-rock {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 175px;
+  left: 550px;
+  background-image: url("../images/rock.png");
+  background-size: cover;
+}
+
+.rock-animation {
+  animation: rock 1.33s infinite;
+}
+
+@keyframes rock {
+  0% {
+    left: 550px;
+  }
+
+  100% {
+    left: -50px;
+  }
+}
+
+.jump-animation {
+  animation: jump 0.5s;
+}
+
+@keyframes jump {
+  0% {
+    top: 225px;
+  }
+
+  50% {
+    top: 75px;
+  }
+
+  75% {
+    top: 75px;
+  }
+
+  100% {
+    top: 225px;
+  }
+}
+
+#game-start {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  opacity: 0.7;
+  background: black
+}
+
+.startScreenText {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: white;
+}
+
+#game-score {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 12px;
+}
+
+
+
+
 
 #formContainer {
   padding: 50px;
@@ -16,23 +147,25 @@
 }
 
 form label {
-    display: inline-block;
-    text-align: left;  
-    margin-bottom: 5px;
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 form input[type="text"],
-form input[type="email"] {
-    display: block; 
-    width: 100%; 
-    padding: 5px;
-    margin-bottom: 10px;
+form input[type="email"],
+form input[type="tel"] {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 form input[type="checkbox"] {
   margin-right: 5px;
 }
 
+/*
 form input[type="submit"] {
   background-color: #0675b6;
   color: white;
@@ -45,6 +178,7 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: #060606;
 }
-.hidden{
-    display: none;
+*/
+.hidden {
+  display: none;
 }

@@ -13,11 +13,11 @@
   /* padding, margin: 0: bewirkt, dass es mit 100vh zuunterist */
   padding: 0;
   margin: 0;
-  background-color: #205F69;
+  background-color: #2b2926;
 }
 
 .header-desktop {
-  background-color: #01454f;
+  background-color: #2b2926;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,7 +54,7 @@ nav #marker {
 }
 
 .nav-mobile-hidden {
-  background-color: #205F69;
+  background-color: #54514c;
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -83,13 +83,14 @@ nav #marker {
 
 /* Footer Start */
 footer {
-  background-color: #205F69;
+  background-color: #54514c;
   padding: 20px;
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 80px;
 }
 
 .icons,

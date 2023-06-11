@@ -1,7 +1,7 @@
 /* CSS Code, den es für die Start Page braucht */
 .content {
     flex-grow: 1;
-    background-color: #01454f;
+    background-color: #2b2926;
     color: white;
 }
 
@@ -20,12 +20,14 @@
     font-size: 18px;
     font-weight: bold;
     border-radius: 12px;
-    background-color: #DCBD11;
+    background-color: #e0bf8f;
     border: none;
     color: white;
 }
 
-.promobutton:hover {}
+.promobutton:hover {
+    background-color: #c1a16e;
+}
 
 
 .main-image {
@@ -40,6 +42,7 @@
 }
 
 .preview-bilder {
+    margin-top: 24px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -48,10 +51,31 @@
 
 .store-item {
     flex-basis: 16%;
+    width: 80%;
+}
+
+.store-item p {
+    font-size: small;
 }
 
 .store-item-image {
     width: 80%;
-    height: 80%;
     margin-bottom: -10px;
+    border: 3px solid #54514c;
+}
+
+@media only screen and (max-width: 850px) {
+    .store-item {
+        flex-basis: 33%;
+        width: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .store-item {
+        flex-basis: 50%;
+        width: 80%;
+    }
+
 }
