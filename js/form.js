@@ -1,13 +1,21 @@
 // (1) Variablen initialisieren
 const formContainer = document.getElementById("formContainer");
+const gameContainer = document.getElementById("game-container");
 const thankYouContainer = document.getElementById("thankYouContainer");
 const submitButton = document.getElementById("submit");
 submitButton.disabled = true;
-const mannField = document.getElementById("mann");
-const frauField = document.getElementById("frau");
+
+const geschlechtField = document.getElementsByName("geschlecht");
+var geschlechtFieldWert;
+for (var i = 0; i < geschlechtField.length; i++) {
+  if (geschlechtField[i].checked) {
+    geschlechtFieldWert = geschlechtField[i].value;
+  }
+}
 const vornameField = document.getElementById("vorname");
 const nachnameField = document.getElementById("nachname");
 const emailField = document.getElementById("email");
+const phonenumberField = document.getElementById("phonenumber")
 
 // (2) Interaktionen festlegen
 emailField.addEventListener("keyup", () => {
@@ -19,23 +27,6 @@ submitButton.addEventListener("click", async (event) => {
 });
 
 // (3) Interaktionen Code
-
-const onChangeVornameField = () => {
-  if (vornameField.value === "") {
-    submitButton.disabled = true;
-  } else {
-    submitButton.disabled = false;
-  }
-};
-
-const onChangeNachnameField = () => {
-  if (nachnameField.value === "") {
-    submitButton.disabled = true;
-  } else {
-    submitButton.disabled = false;
-  }
-};
-
 const onChangeEmailField = () => {
   if (emailField.value === "") {
     submitButton.disabled = true;
@@ -43,7 +34,6 @@ const onChangeEmailField = () => {
     submitButton.disabled = false;
   }
 };
-
 const onClickSubmit = async () => {
   // Daten aus dem Formular für die Datenbank bereitstellen
   const data = {
@@ -54,17 +44,25 @@ const onClickSubmit = async () => {
     columns: {
       // "email" Name der Spalte in der SQL Tabelle
       // "emailField.value" Eingabe des Benutzers aus dem Formularfeld
-      mann: mannField.value,
-      frau: frauField.value,
+      geschlecht: geschlechtFieldWert,
       vorname: vornameField.value,
       nachname: nachnameField.value,
       email: emailField.value,
+      phonenumber: phonenumberField.value
     },
   };
   // Speichert die Daten in der Datenbank
   await databaseClient.insertInto(data);
 
-  // Nach dem Speichern verschwindet das Formular, eine Dankeschön Nachricht erscheint
+  // Nach dem Speichern verschwindet das Formular, das Game erscheint
   formContainer.classList.add("hidden");
-  thankYouContainer.classList.remove("hidden");
+  gameContainer.classList.remove("hidden");
 };
+
+
+/*
+var test = false;
+
+if (test == false) {
+  submitButton.disabled = false;
+}*/
