@@ -37,7 +37,7 @@
     <div class="content">
 
 
-        <div id="game-container" class="">
+        <div id="game-container" class="hidden">
 
             <div class="game-info">
                 Klicke, um zu springen.<br />
@@ -74,11 +74,11 @@
                 Füllen Sie alle Felder aus.
             </div> <br>
 
-            <form action="form.js">
+            <form>
                 <label for="geschlecht">Geschlecht:</label><br>
-                <input type="checkbox" id="mann" name="geschlecht" value="Mann">
+                <input type="radio" id="mann" name="geschlecht" value="Mann">
                 <label for="mann">Mann</label>
-                <input type="checkbox" id="frau" name="geschlecht" value="Frau">
+                <input type="radio" id="frau" name="geschlecht" value="Frau">
                 <label for="frau">Frau</label> <br> <br>
 
                 <label for="vorname">Vorname:</label>
@@ -90,7 +90,10 @@
                 <label for="email">E-Mail:</label>
                 <input type="email" id="email" name="email" required><br>
 
-                <input type="submit" value="Absenden">
+                <label for="phonenumber">Telefonnummer:</label>
+                <input type="tel" id="phonenumber" name="phonenumber" required><br>
+
+                <input type="submit" id="submit" value="Absenden">
             </form>
         </div>
 
@@ -126,11 +129,12 @@
             </p>
         </div>
     </footer>
-    <script src="./js/header.js"></script>
-    <script src="./js/header-mobile.js"></script>
     <script src="./js/databaseClient.js"></script>
     <script src="./js/form.js"></script>
     <script src="./js/game.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/header-mobile.js"></script>
+
 </body>
 
 
