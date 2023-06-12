@@ -49,7 +49,7 @@ async function onClickSubmit(event) {
     pw: "49637c97", // SQL Passwort
     tableName: "user", // Name der Tabelle in der SQL Datenbank
     columns: {
-      geschlecht: geschlechtFieldWert,
+      geschlecht: geschlechtFieldWert.value,
       vorname: vornameField.value,
       nachname: nachnameField.value,
       email: emailField.value,
