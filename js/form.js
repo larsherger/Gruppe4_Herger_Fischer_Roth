@@ -6,7 +6,7 @@ const submitButton = document.getElementById("submit");
 submitButton.disabled = true;
 
 const geschlechtField = document.getElementsByName("geschlecht");
-var geschlechtFieldWert;
+let geschlechtFieldWert;
 const vornameField = document.getElementById("vorname");
 const nachnameField = document.getElementById("nachname");
 const emailField = document.getElementById("email");
@@ -19,6 +19,7 @@ submitButton.addEventListener("click", onClickSubmit);
 geschlechtField.forEach((element) => {
   element.addEventListener("click", () => {
     console.log('OK');
+    console.log(radioButtonValue());
     radioButtonValue();
   });
 });
