@@ -22,6 +22,7 @@ submitButton.addEventListener("click", async (event) => {
 });
 
 geschlechtField.addEventListener("click", () => {
+  console.log('OK');
   radioButtonValue();
 });
 
