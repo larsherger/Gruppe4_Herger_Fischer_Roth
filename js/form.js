@@ -12,6 +12,7 @@ for (let i = 0; i < geschlechtField.length; i++) {
       geschlechtFieldWert = geschlechtField[i].value;
     }
   }
+console.log(geschlechtFieldWert);
 const vornameField = document.getElementById("vorname");
 const nachnameField = document.getElementById("nachname");
 const emailField = document.getElementById("email");
