@@ -7,11 +7,6 @@ submitButton.disabled = true;
 
 const geschlechtField = document.getElementsByName("geschlecht");
 var geschlechtFieldWert;
-for (var i = 0; i < geschlechtField.length; i++) {
-  if (geschlechtField[i].checked) {
-    geschlechtFieldWert = geschlechtField[i].value;
-  }
-}
 const vornameField = document.getElementById("vorname");
 const nachnameField = document.getElementById("nachname");
 const emailField = document.getElementById("email");
@@ -26,6 +21,10 @@ submitButton.addEventListener("click", async (event) => {
   onClickSubmit();
 });
 
+geschlechtField.addEventListener("click", () => {
+  radioButtonValue();
+});
+
 // (3) Interaktionen Code
 const onChangeEmailField = () => {
   if (emailField.value === "") {
@@ -34,6 +33,14 @@ const onChangeEmailField = () => {
     submitButton.disabled = false;
   }
 };
+const radioButtonValue = () => {
+for (var i = 0; i < geschlechtField.length; i++) {
+  if (geschlechtField[i].checked) {
+    geschlechtFieldWert = geschlechtField[i].value;
+  }
+}
+};
+
 const onClickSubmit = async () => {
   // Daten aus dem Formular für die Datenbank bereitstellen
   const data = {
