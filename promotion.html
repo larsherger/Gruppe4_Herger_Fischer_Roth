@@ -74,24 +74,30 @@
                 Füllen Sie alle Felder aus.
             </div> <br>
 
-            <form>
+            <form id="form">
                 <label for="geschlecht">Geschlecht:</label><br>
                 <input type="radio" id="mann" name="geschlecht" value="Mann">
                 <label for="mann">Mann</label>
                 <input type="radio" id="frau" name="geschlecht" value="Frau">
-                <label for="frau">Frau</label> <br> <br>
+                <label for="frau">Frau</label>
+                <input type="radio" id="keine-angabe" name="geschlecht" value="keine-Angabe" checked>
+                <label for="keine-angabe">Keine Angabe</label><br> <br>
 
                 <label for="vorname">Vorname:</label>
+                <div id="errorMessageVorname"></div>
                 <input type="text" id="vorname" name="vorname" required><br>
 
                 <label for="nachname">Nachname:</label>
+                <div id="errorMessageNachname"></div>
                 <input type="text" id="nachname" name="nachname" required> <br>
 
                 <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email" required><br>
+                <div id="errorMessageEmail"></div>
+                <input type="email" id="email" name="email" placeholder="ich@beispiel.com" required><br>
 
                 <label for="phonenumber">Telefonnummer:</label>
-                <input type="tel" id="phonenumber" name="phonenumber" required><br>
+                <div id="errorMessagePhonenumber"></div>
+                <input type="tel" id="phonenumber" name="phonenumber" placeholder="+41 00 000 00 00" required><br>
 
                 <input type="submit" id="submit" value="Absenden">
             </form>
