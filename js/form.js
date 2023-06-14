@@ -2,66 +2,141 @@
 const formContainer = document.getElementById("formContainer");
 const gameContainer = document.getElementById("game-container");
 const thankYouContainer = document.getElementById("thankYouContainer");
+
 const submitButton = document.getElementById("submit");
 submitButton.disabled = true;
 
-const geschlechtField = document.getElementsByName("geschlecht");
-let geschlechtFieldWert;
-for (let i = 0; i < geschlechtField.length; i++) {
-    if (geschlechtField[i].checked) {
-      geschlechtFieldWert = geschlechtField[i].value;
+
+
+function enableSubmit() {
+  const requiredFields = document.getElementById("form").querySelectorAll("[required]");
+  console.log(requiredFields);
+  let isValid = true;
+  for (var i = 0; i < requiredFields.length; i++) {
+    let changedInput = requiredFields[i];
+    if (changedInput.value.trim() === "" || changedInput.value === null) {
+      isValid = false;
+      break;
     }
   }
-console.log(geschlechtFieldWert);
+  submitButton.disabled = !isValid;
+}
+
+const geschlechtField = document.getElementsByName("geschlecht");
+radioButtonValue()
+
 const vornameField = document.getElementById("vorname");
+const errorMessageVorname = document.getElementById("errorMessageVorname");
+
 const nachnameField = document.getElementById("nachname");
+const errorMessageNachname = document.getElementById("errorMessageNachname");
+
 const emailField = document.getElementById("email");
+const errorMessageEmail = document.getElementById("errorMessageEmail");
+
 const phonenumberField = document.getElementById("phonenumber");
+const errorMessagePhonenumber = document.getElementById("errorMessagePhonenumber");
 
 // (2) Interaktionen festlegen
-emailField.addEventListener("keyup", onChangeEmailField);
-submitButton.addEventListener("click", onClickSubmit);
-
 geschlechtField.forEach((element) => {
   element.addEventListener("click", () => {
-    console.log('OK');
-    console.log(geschlechtFieldWert);
-    console.log(radioButtonValue());
     radioButtonValue();
   });
 });
 
-// (3) Interaktionsfunktionen
-function onChangeEmailField() {
-  if (emailField.value === "") {
-    submitButton.disabled = true;
-  } else {
-    submitButton.disabled = false;
-  }
-}
+vornameField.addEventListener("keyup", () => {
+  onChangeVornameField();
+  enableSubmit();
+});
 
+nachnameField.addEventListener("keyup", () => {
+  onChangeNachnameField();
+  enableSubmit();
+});
+
+emailField.addEventListener("blur", () => {
+  enableSubmit();
+  onChangeEmailField();
+});
+
+phonenumberField.addEventListener("blur", () => {
+  enableSubmit();
+  onChangePhonenumberField();
+});
+
+submitButton.addEventListener("click", onClickSubmit);
+
+// (3) Interaktionsfunktionen
 function radioButtonValue() {
   for (let i = 0; i < geschlechtField.length; i++) {
     if (geschlechtField[i].checked) {
       geschlechtFieldWert = geschlechtField[i].value;
+      return geschlechtFieldWert;
     }
   }
-}
+};
+
+let formValueVornameField;
+function onChangeVornameField() {
+  formValueVornameField = vornameField.value.trim();
+  if (formValueVornameField.length > 2) {
+    errorMessageVorname.innerHTML = "";
+  } else {
+    errorMessageVorname.innerHTML = "Der eingegebene Vorname ist zu kurz.";
+  }
+
+};
+
+let formValueNachnameField;
+function onChangeNachnameField() {
+  formValueNachnameField = nachnameField.value.trim();
+  if (formValueNachnameField.length > 2) {
+    errorMessageNachname.innerHTML = "";
+  } else {
+    errorMessageNachname.innerHTML = "Der eingegebene Nachname ist zu kurz.";
+  }
+};
+
+const emailRegex = /\S+@\S+\.\S+/;
+let formValueEmailField;
+function onChangeEmailField() {
+  formValueEmailField = emailField.value.trim();
+  if (formValueEmailField.match(emailRegex)) {
+    errorMessageEmail.innerHTML = "";
+  } else {
+    submitButton.disabled = true;
+    emailField.value = "",
+      errorMessageEmail.innerHTML = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
+  }
+};
+
+const swissPhoneRegex = /^([0][1-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])$|^(([0][0]|\+)[1-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9][0-9](\s|)[0-9][0-9](\s|)[0-9][0-9])$/gm;
+let formValuePhonenumberField;
+function onChangePhonenumberField() {
+  formValuePhonenumberField = phonenumberField.value.trim();
+  if (formValuePhonenumberField.match(swissPhoneRegex)) {
+    errorMessagePhonenumber.innerHTML = "";
+  } else {
+    submitButton.disabled = true;
+    phonenumberField.value = "";
+    errorMessagePhonenumber.innerHTML = "Bitte geben Sie eine gültige Telefonnummer ein.";
+  }
+};
+
 
 async function onClickSubmit(event) {
   event.preventDefault();
-
   // Daten aus dem Formular für die Datenbank bereitstellen
   const data = {
     group: "b4", // SQL Gruppen Namen
     pw: "49637c97", // SQL Passwort
     tableName: "user", // Name der Tabelle in der SQL Datenbank
     columns: {
-      geschlecht: geschlechtFieldWert.value,
-      vorname: vornameField.value,
-      nachname: nachnameField.value,
-      email: emailField.value,
-      phonenumber: phonenumberField.value
+      geschlecht: geschlechtFieldWert,
+      vorname: formValueVornameField,
+      nachname: formValueNachnameField,
+      email: formValueEmailField,
+      phonenumber: formValuePhonenumberField,
     },
   };
 
