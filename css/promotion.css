@@ -1,5 +1,6 @@
 /* CSS Code, den es für die Promotion Page braucht */
 
+
 .hidden {
   display: block;
 }
@@ -35,7 +36,7 @@
   position: absolute;
   width: 600px;
   height: 300px;
-  background-image: url("../images/background.png");
+  background-image: url("../images/livingroom.png");
   background-size: cover;
 }
 
@@ -55,10 +56,10 @@
 
 #game-dino {
   height: 75px;
-  width: 75px;
+  width: 100px;
   top: 225px;
   position: relative;
-  background-image: url("../images/dino.png");
+  background-image: url("../images/woman.png");
   background-size: cover;
 }
 
@@ -67,12 +68,12 @@
 }
 
 #game-rock {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 55px;
   position: relative;
   top: 175px;
   left: 550px;
-  background-image: url("../images/rock.png");
+  background-image: url("../images/table.png");
   background-size: cover;
 }
 
@@ -138,8 +139,6 @@
 
 
 
-
-
 #formContainer {
   padding: 50px;
   width: 40%;
@@ -161,24 +160,50 @@ form input[type="tel"] {
   margin-bottom: 10px;
 }
 
-form input[type="checkbox"] {
+form input[type="radio"] {
   margin-right: 5px;
 }
 
-/*
-form input[type="submit"] {
-  background-color: #0675b6;
-  color: white;
-  padding: 10px 20px;
+
+#submit {
+  padding: 10px 48px;
+  font-family: Barlow, sans-serif;
+  font-size: 124x;
+  font-weight: bold;
+  border-radius: 12px;
+  background-color: #e0bf8f;
   border: none;
-  border-radius: 3px;
-  cursor: pointer;
+  color: white;
+  transition: 0.3s;
 }
 
-form input[type="submit"]:hover {
-  background-color: #060606;
+#submit:hover {
+  background-color: #c1a16e;
+  border-radius: 2px;
 }
-*/
+
+#submit:disabled {
+  background-color: #54514c;
+}
+
+#submit:disabled:hover {
+  background-color: #54514c;
+  border-radius: 12px;
+}
+
+.radio-group {
+  display: inline;
+}
+
+@media only screen and (max-width: 620px) {
+  .radio-group {
+    display: block;
+
+  }
+}
+
+
+
 .hidden {
   display: none;
 }

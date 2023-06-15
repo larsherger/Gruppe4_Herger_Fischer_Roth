@@ -36,19 +36,18 @@
 
     <div class="content">
 
-
         <div id="game-container" class="hidden">
 
             <div class="game-info">
-                Klicke, um zu springen.<br />
-                Weiche den Steinen aus.<br />
-                Erreiche 100 Punkte, um einen Preis zu gewinnen.
+                Klicken Sie, um zu springen.<br />
+                Weichen Sie den Steinen aus.<br />
+                Erreichen Sie 100 Punkte, um einen Preis zu gewinnen.
             </div>
 
             <div id="game">
                 <div id="game-start">
                     <div class="startScreenText">
-                        Klicke, um das Spiel zu starten.
+                        Klicken Sie, um das Spiel zu starten.
                     </div>
                 </div>
                 <div id="game-background"></div>
@@ -71,17 +70,22 @@
 
         <div id="formContainer">
             <div>
-                Füllen Sie alle Felder aus.
+                <h1>Gewinnspiel</h1>
+                <p>Füllen Sie, um am Gewinnspiel teilzunehmen, alle Felder aus.</p>
             </div> <br>
 
             <form id="form">
                 <label for="geschlecht">Geschlecht:</label><br>
-                <input type="radio" id="mann" name="geschlecht" value="Mann">
-                <label for="mann">Mann</label>
-                <input type="radio" id="frau" name="geschlecht" value="Frau">
-                <label for="frau">Frau</label>
-                <input type="radio" id="keine-angabe" name="geschlecht" value="keine-Angabe" checked>
-                <label for="keine-angabe">Keine Angabe</label><br> <br>
+                <div class="radio-group"><input type="radio" id="mann" name="geschlecht" value="Mann">
+                    <label for="mann">Mann</label>
+                </div>
+                <div class="radio-group"><input type="radio" id="frau" name="geschlecht" value="Frau">
+                    <label for="frau">Frau</label>
+                </div>
+                <div class="radio-group"><input type="radio" id="keine-angabe" name="geschlecht" value="keine-Angabe"
+                        checked>
+                    <label for="keine-angabe">Keine Angabe</label><br> <br>
+                </div>
 
                 <label for="vorname">Vorname:</label>
                 <div id="errorMessageVorname"></div>

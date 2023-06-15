@@ -13,6 +13,7 @@
     margin-bottom: 40px;
 }
 
+
 .promobutton {
     margin: 20px;
     padding: 10px 48px;
@@ -23,10 +24,29 @@
     background-color: #e0bf8f;
     border: none;
     color: white;
+    transition: 0.3s;
 }
 
 .promobutton:hover {
     background-color: #c1a16e;
+    border-radius: 2px;
+    padding: 10px 56px;
+}
+
+.arrow {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    transform: rotate(45deg) translateY(7px) translateX(1px);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.promobutton:hover .arrow {
+    transform: rotate(45deg) translateY(-5px) translateX(15px);
+    opacity: 1;
 }
 
 

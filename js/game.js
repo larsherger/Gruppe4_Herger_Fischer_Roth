@@ -59,8 +59,14 @@ const stopGame = async () => {
   gameOver.classList.remove("hidden");
   if (Number(score.innerText) + 1 >= POINTS_TO_WIN) {
     winnerText.classList.remove("hidden");
+    console.log(score.innerText);
+  }
+  else {
+    console.log(score.innerText);
+    winnerText.classList.add("hidden");
   }
 };
+
 
 const startGameLoop = () => {
   gameLoopInterval = window.setInterval(() => {

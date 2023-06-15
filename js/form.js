@@ -116,6 +116,8 @@ function onChangePhonenumberField() {
   formValuePhonenumberField = phonenumberField.value.trim();
   if (formValuePhonenumberField.match(swissPhoneRegex)) {
     errorMessagePhonenumber.innerHTML = "";
+    formValuePhonenumberField = formValuePhonenumberField.replace(/^0/, '+41');
+    formValuePhonenumberField = formValuePhonenumberField.replace(/\s/g, '');
   } else {
     submitButton.disabled = true;
     phonenumberField.value = "";
