@@ -198,7 +198,11 @@ form input[type="radio"] {
 @media only screen and (max-width: 620px) {
   .radio-group {
     display: block;
+  }
 
+  #formContainer {
+    width: 60%;
+    margin: auto;
   }
 }
 
